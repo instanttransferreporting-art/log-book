@@ -1,0 +1,553 @@
+2026-11-11 13:30:39.684 WAT [52148] LOG:  starting PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+
+2026-11-11 13:30:39.689 WAT [52148] LOG:  listening on IPv6 address "::1", port 5433
+
+2026-11-11 13:30:39.689 WAT [52148] LOG:  listening on IPv4 address "127.0.0.1", port 5433
+
+2026-11-11 13:30:39.771 WAT [40896] LOG:  database system was interrupted; last known up at 2026-11-11 13:24:44 WAT
+
+2026-11-11 13:30:40.104 WAT [40896] LOG:  database system was not properly shut down; automatic recovery in progress
+
+2026-11-11 13:30:40.109 WAT [40896] LOG:  redo starts at 0/40000A8
+
+2026-11-11 13:30:40.110 WAT [40896] WARNING:  could not open directory "base/17669": No such file or directory
+2026-11-11 13:30:40.110 WAT [40896] CONTEXT:  WAL redo at 0/4000178 for Database/DROP: dir 1663/17669
+
+2026-11-11 13:30:40.110 WAT [40896] WARNING:  some useless files may be left behind in old database directory "base/17669"
+2026-11-11 13:30:40.110 WAT [40896] CONTEXT:  WAL redo at 0/4000178 for Database/DROP: dir 1663/17669
+
+2026-11-11 13:30:40.166 WAT [40896] LOG:  invalid record length at 0/453CAF0: expected at least 24, got 0
+2026-11-11 13:30:40.166 WAT [40896] LOG:  redo done at 0/453CAB8 system usage: CPU: user: 0.00 s, system: 0.04 s, elapsed: 0.05 s
+
+2026-11-11 13:30:40.173 WAT [40800] LOG:  checkpoint starting: end-of-recovery immediate wait
+
+2026-11-11 13:30:40.457 WAT [40800] LOG:  checkpoint complete: wrote 1115 buffers (6.8%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.032 s, sync=0.247 s, total=0.288 s; sync files=372, longest=0.003 s, average=0.001 s; distance=5362 kB, estimate=5362 kB; lsn=0/453CAF0, redo lsn=0/453CAF0
+
+2026-11-11 13:30:40.474 WAT [52148] LOG:  database system is ready to accept connections
+
+PostgreSQL prêt sur localhost:5433
+2026-11-11 13:35:40.472 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 13:35:41.804 WAT [40800] LOG:  checkpoint complete: wrote 12 buffers (0.1%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.317 s, sync=0.005 s, total=1.332 s; sync files=6, longest=0.001 s, average=0.001 s; distance=70 kB, estimate=4833 kB; lsn=0/454E660, redo lsn=0/454E608
+
+2026-11-11 13:39:58.740 WAT [36180] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 13:39:58.740 WAT [36180] DETAIL:  Key ("categoryId", number)=(cmwc3wlfn0002vbugei63s3jv, 2) already exists.
+2026-11-11 13:39:58.740 WAT [36180] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,CAST($12::text AS "public"."DocumentStatus"),$13,$14,$15) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 13:39:58.740 WAT [26212] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 13:39:58.740 WAT [26212] DETAIL:  Key ("categoryId", number)=(cmwc3wlfn0002vbugei63s3jv, 2) already exists.
+2026-11-11 13:39:58.740 WAT [26212] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,CAST($12::text AS "public"."DocumentStatus"),$13,$14,$15) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 13:39:58.780 WAT [36180] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 13:39:58.780 WAT [36180] DETAIL:  Key ("categoryId", number)=(cmwc3wlfn0002vbugei63s3jv, 3) already exists.
+2026-11-11 13:39:58.780 WAT [36180] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,CAST($12::text AS "public"."DocumentStatus"),$13,$14,$15) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 13:39:58.898 WAT [34824] ERROR:  AuditLog est en ajout seul
+2026-11-11 13:39:58.898 WAT [34824] CONTEXT:  PL/pgSQL function audit_log_immutable() line 11 at RAISE
+2026-11-11 13:39:58.898 WAT [34824] STATEMENT:  UPDATE "public"."AuditLog" SET "action" = $1 WHERE ("public"."AuditLog"."id" = $2 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 13:39:58.901 WAT [34824] ERROR:  AuditLog est en ajout seul
+2026-11-11 13:39:58.901 WAT [34824] CONTEXT:  PL/pgSQL function audit_log_immutable() line 4 at RAISE
+2026-11-11 13:39:58.901 WAT [34824] STATEMENT:  DELETE FROM "public"."AuditLog" WHERE ("public"."AuditLog"."id" = $1 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 13:40:40.808 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 13:40:48.539 WAT [40800] LOG:  checkpoint complete: wrote 71 buffers (0.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=7.688 s, sync=0.037 s, total=7.731 s; sync files=45, longest=0.003 s, average=0.001 s; distance=376 kB, estimate=4387 kB; lsn=0/45ACA60, redo lsn=0/45AC9D0
+
+2026-11-11 13:42:53.359 WAT [49708] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:42:53.359 WAT [41564] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:42:53.360 WAT [36732] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:42:53.360 WAT [45664] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:42:53.360 WAT [46320] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:42:53.360 WAT [51064] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:42:53.361 WAT [9740] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:42:53.361 WAT [33960] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:42:53.361 WAT [6148] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.413 WAT [41768] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.415 WAT [48276] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.415 WAT [49788] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.416 WAT [31304] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.416 WAT [47272] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:45:23.416 WAT [48608] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.416 WAT [48200] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.434 WAT [51808] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:23.449 WAT [38380] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:45:40.544 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 13:45:40.980 WAT [40800] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.428 s, sync=0.003 s, total=0.437 s; sync files=3, longest=0.002 s, average=0.001 s; distance=25 kB, estimate=3951 kB; lsn=0/45B2E48, redo lsn=0/45B2DF0
+
+2026-11-11 13:45:46.258 WAT [45784] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:48:14.950 WAT [42692] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:48:14.950 WAT [34416] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:48:14.950 WAT [47528] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:48:14.950 WAT [39972] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:48:14.951 WAT [35688] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:48:14.951 WAT [47280] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:48:14.951 WAT [42516] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:48:14.951 WAT [51404] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:48:14.951 WAT [50044] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.312 WAT [43036] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:49:39.312 WAT [45940] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.313 WAT [39424] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.313 WAT [26196] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.313 WAT [44216] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.313 WAT [26920] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.314 WAT [48376] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.314 WAT [50312] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.314 WAT [49332] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.314 WAT [44708] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:49:39.314 WAT [47192] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:49:39.314 WAT [44224] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:49:39.314 WAT [45924] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:49:39.314 WAT [46540] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:50:40.981 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 13:50:44.397 WAT [40800] LOG:  checkpoint complete: wrote 31 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.386 s, sync=0.025 s, total=3.417 s; sync files=29, longest=0.003 s, average=0.001 s; distance=74 kB, estimate=3563 kB; lsn=0/45C59A8, redo lsn=0/45C5950
+
+2026-11-11 13:51:24.945 WAT [40624] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.947 WAT [42568] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.947 WAT [39464] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.947 WAT [50208] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.947 WAT [45804] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.948 WAT [47344] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.948 WAT [46752] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.948 WAT [35168] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:51:24.948 WAT [33292] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.693 WAT [26648] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.693 WAT [20760] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.694 WAT [45048] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:52:25.695 WAT [48136] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.695 WAT [44152] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:52:25.695 WAT [51536] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.696 WAT [44440] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.696 WAT [38436] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.697 WAT [51340] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:52:25.697 WAT [16056] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:25.697 WAT [47640] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:52:25.697 WAT [47808] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:52:25.697 WAT [35888] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 13:52:25.697 WAT [41556] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 13:52:52.242 WAT [25336] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 13:52:52.242 WAT [25336] DETAIL:  Key ("categoryId", number)=(cmwc4d6a90002vbtw50u2u37z, 2) already exists.
+2026-11-11 13:52:52.242 WAT [25336] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,CAST($12::text AS "public"."DocumentStatus"),$13,$14,$15) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+2026-11-11 13:52:52.242 WAT [51540] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 13:52:52.242 WAT [51540] DETAIL:  Key ("categoryId", number)=(cmwc4d6a90002vbtw50u2u37z, 2) already exists.
+2026-11-11 13:52:52.242 WAT [51540] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,CAST($12::text AS "public"."DocumentStatus"),$13,$14,$15) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 13:52:52.277 WAT [25336] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 13:52:52.277 WAT [25336] DETAIL:  Key ("categoryId", number)=(cmwc4d6a90002vbtw50u2u37z, 3) already exists.
+2026-11-11 13:52:52.277 WAT [25336] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,CAST($12::text AS "public"."DocumentStatus"),$13,$14,$15) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 13:52:52.404 WAT [42880] ERROR:  AuditLog est en ajout seul
+2026-11-11 13:52:52.404 WAT [42880] CONTEXT:  PL/pgSQL function audit_log_immutable() line 11 at RAISE
+2026-11-11 13:52:52.404 WAT [42880] STATEMENT:  UPDATE "public"."AuditLog" SET "action" = $1 WHERE ("public"."AuditLog"."id" = $2 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 13:52:52.407 WAT [42880] ERROR:  AuditLog est en ajout seul
+2026-11-11 13:52:52.407 WAT [42880] CONTEXT:  PL/pgSQL function audit_log_immutable() line 4 at RAISE
+2026-11-11 13:52:52.407 WAT [42880] STATEMENT:  DELETE FROM "public"."AuditLog" WHERE ("public"."AuditLog"."id" = $1 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 13:55:40.404 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 13:55:45.775 WAT [40800] LOG:  checkpoint complete: wrote 49 buffers (0.3%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=5.334 s, sync=0.030 s, total=5.372 s; sync files=41, longest=0.002 s, average=0.001 s; distance=254 kB, estimate=3232 kB; lsn=0/46055B0, redo lsn=0/4605520
+
+2026-11-11 14:00:40.782 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 14:00:42.556 WAT [40800] LOG:  checkpoint complete: wrote 16 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.751 s, sync=0.014 s, total=1.775 s; sync files=14, longest=0.003 s, average=0.001 s; distance=10 kB, estimate=2910 kB; lsn=0/4607E48, redo lsn=0/4607DF0
+
+2026-11-11 14:05:40.565 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 14:05:42.119 WAT [40800] LOG:  checkpoint complete: wrote 14 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.530 s, sync=0.015 s, total=1.554 s; sync files=15, longest=0.002 s, average=0.001 s; distance=24 kB, estimate=2622 kB; lsn=0/460DF08, redo lsn=0/460DEB0
+
+2026-11-11 14:28:20.893 WAT [40800] LOG:  checkpoint starting: immediate force wait
+
+2026-11-11 14:28:20.905 WAT [40800] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.004 s, total=0.012 s; sync files=5, longest=0.001 s, average=0.001 s; distance=5035 kB, estimate=5035 kB; lsn=0/4AF8BB0, redo lsn=0/4AF8B58
+
+2026-11-11 14:28:21.654 WAT [40800] LOG:  checkpoint starting: immediate force wait
+
+2026-11-11 14:28:21.666 WAT [40800] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.005 s, total=0.013 s; sync files=5, longest=0.002 s, average=0.001 s; distance=5042 kB, estimate=5042 kB; lsn=0/4FE5470, redo lsn=0/4FE5418
+
+2026-11-11 14:28:40.051 WAT [49740] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.052 WAT [36820] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.052 WAT [39568] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.052 WAT [44516] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.052 WAT [51956] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.052 WAT [46020] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.053 WAT [43556] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.053 WAT [38468] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:40.053 WAT [46740] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 14:28:40.053 WAT [51172] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 14:28:40.053 WAT [33008] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:28:45.889 WAT [40800] LOG:  checkpoint starting: immediate force wait
+
+2026-11-11 14:28:45.916 WAT [40800] LOG:  checkpoint complete: wrote 10 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.006 s, sync=0.010 s, total=0.027 s; sync files=10, longest=0.002 s, average=0.001 s; distance=5065 kB, estimate=5065 kB; lsn=0/54D79A0, redo lsn=0/54D7948
+
+2026-11-11 14:28:46.598 WAT [40800] LOG:  checkpoint starting: immediate force wait
+
+2026-11-11 14:28:46.612 WAT [40800] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.005 s, total=0.014 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5047 kB, estimate=5063 kB; lsn=0/59C57B0, redo lsn=0/59C5758
+
+2026-11-11 14:33:46.627 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 14:33:50.134 WAT [40800] LOG:  checkpoint complete: wrote 32 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=3.491 s, sync=0.011 s, total=3.508 s; sync files=11, longest=0.002 s, average=0.001 s; distance=255 kB, estimate=4582 kB; lsn=0/5A05720, redo lsn=0/5A05690
+
+2026-11-11 14:35:33.346 WAT [52908] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 14:35:33.346 WAT [52908] DETAIL:  Key ("categoryId", number)=(cmwc5w2g70002vbzkrwsuihxb, 2) already exists.
+2026-11-11 14:35:33.346 WAT [52908] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","entity","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,CAST($13::text AS "public"."DocumentStatus"),$14,$15,$16) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."entity", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+2026-11-11 14:35:33.346 WAT [52824] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 14:35:33.346 WAT [52824] DETAIL:  Key ("categoryId", number)=(cmwc5w2g70002vbzkrwsuihxb, 2) already exists.
+2026-11-11 14:35:33.346 WAT [52824] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","entity","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,CAST($13::text AS "public"."DocumentStatus"),$14,$15,$16) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."entity", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 14:35:33.382 WAT [52824] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 14:35:33.382 WAT [52824] DETAIL:  Key ("categoryId", number)=(cmwc5w2g70002vbzkrwsuihxb, 3) already exists.
+2026-11-11 14:35:33.382 WAT [52824] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","entity","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,CAST($13::text AS "public"."DocumentStatus"),$14,$15,$16) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."entity", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 14:35:33.515 WAT [52428] ERROR:  AuditLog est en ajout seul
+2026-11-11 14:35:33.515 WAT [52428] CONTEXT:  PL/pgSQL function audit_log_immutable() line 11 at RAISE
+2026-11-11 14:35:33.515 WAT [52428] STATEMENT:  UPDATE "public"."AuditLog" SET "action" = $1 WHERE ("public"."AuditLog"."id" = $2 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 14:35:33.516 WAT [52428] ERROR:  AuditLog est en ajout seul
+2026-11-11 14:35:33.516 WAT [52428] CONTEXT:  PL/pgSQL function audit_log_immutable() line 4 at RAISE
+2026-11-11 14:35:33.516 WAT [52428] STATEMENT:  DELETE FROM "public"."AuditLog" WHERE ("public"."AuditLog"."id" = $1 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 14:37:17.182 WAT [41072] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.183 WAT [51524] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.183 WAT [45272] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.183 WAT [38960] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.184 WAT [30228] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 14:37:17.184 WAT [55764] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.184 WAT [40172] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.184 WAT [45716] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.185 WAT [45816] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.185 WAT [43720] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.185 WAT [37040] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:37:17.185 WAT [49568] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 14:37:17.185 WAT [50624] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 14:37:17.185 WAT [29916] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 14:38:46.138 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 14:38:56.084 WAT [40800] LOG:  checkpoint complete: wrote 91 buffers (0.6%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=9.883 s, sync=0.056 s, total=9.947 s; sync files=64, longest=0.003 s, average=0.001 s; distance=442 kB, estimate=4168 kB; lsn=0/5A741E0, redo lsn=0/5A74150
+
+2026-11-11 15:08:46.131 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 15:08:47.775 WAT [40800] LOG:  checkpoint complete: wrote 15 buffers (0.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.624 s, sync=0.014 s, total=1.645 s; sync files=16, longest=0.002 s, average=0.001 s; distance=39 kB, estimate=3755 kB; lsn=0/5A7DF40, redo lsn=0/5A7DEE8
+
+2026-11-11 15:13:46.782 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 15:13:48.322 WAT [40800] LOG:  checkpoint complete: wrote 14 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.518 s, sync=0.014 s, total=1.541 s; sync files=15, longest=0.002 s, average=0.001 s; distance=19 kB, estimate=3382 kB; lsn=0/5A82E68, redo lsn=0/5A82E10
+
+2026-11-11 15:27:44.989 WAT [52264] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:27:44.989 WAT [41416] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:27:44.990 WAT [40412] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:27:44.990 WAT [46840] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:27:44.990 WAT [43392] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:27:44.990 WAT [40880] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:27:44.990 WAT [35496] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:27:44.990 WAT [50816] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:27:44.990 WAT [4792] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:27:49.006 WAT [40800] LOG:  checkpoint starting: immediate force wait
+
+2026-11-11 15:27:49.019 WAT [40800] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.005 s, total=0.014 s; sync files=4, longest=0.002 s, average=0.002 s; distance=5036 kB, estimate=5036 kB; lsn=0/5F6E030, redo lsn=0/5F6DFC0
+
+2026-11-11 15:27:49.679 WAT [40800] LOG:  checkpoint starting: immediate force wait
+
+2026-11-11 15:27:49.700 WAT [40800] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.004 s, sync=0.004 s, total=0.021 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5036 kB, estimate=5036 kB; lsn=0/64592F0, redo lsn=0/6459298
+
+2026-11-11 15:29:15.709 WAT [48108] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 15:29:15.709 WAT [48108] DETAIL:  Key ("categoryId", number)=(cmwc7t4u90002vb00udwlb77u, 2) already exists.
+2026-11-11 15:29:15.709 WAT [48108] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","entity","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,CAST($13::text AS "public"."DocumentStatus"),$14,$15,$16) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."entity", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 15:29:15.709 WAT [33264] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 15:29:15.709 WAT [33264] DETAIL:  Key ("categoryId", number)=(cmwc7t4u90002vb00udwlb77u, 2) already exists.
+2026-11-11 15:29:15.709 WAT [33264] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","entity","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,CAST($13::text AS "public"."DocumentStatus"),$14,$15,$16) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."entity", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 15:29:15.744 WAT [33264] ERROR:  duplicate key value violates unique constraint "Document_categoryId_number_key"
+2026-11-11 15:29:15.744 WAT [33264] DETAIL:  Key ("categoryId", number)=(cmwc7t4u90002vb00udwlb77u, 3) already exists.
+2026-11-11 15:29:15.744 WAT [33264] STATEMENT:  INSERT INTO "public"."Document" ("id","companyId","categoryId","schemaVersionId","number","reference","issuer","recipient","entity","subject","docDate","data","status","createdById","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,CAST($13::text AS "public"."DocumentStatus"),$14,$15,$16) RETURNING "public"."Document"."id", "public"."Document"."companyId", "public"."Document"."categoryId", "public"."Document"."schemaVersionId", "public"."Document"."number", "public"."Document"."reference", "public"."Document"."issuer", "public"."Document"."recipient", "public"."Document"."entity", "public"."Document"."subject", "public"."Document"."docDate", "public"."Document"."data", "public"."Document"."status"::text, "public"."Document"."createdById", "public"."Document"."createdAt", "public"."Document"."updatedAt", "public"."Document"."deletedAt"
+
+2026-11-11 15:29:15.883 WAT [46052] ERROR:  AuditLog est en ajout seul
+2026-11-11 15:29:15.883 WAT [46052] CONTEXT:  PL/pgSQL function audit_log_immutable() line 11 at RAISE
+2026-11-11 15:29:15.883 WAT [46052] STATEMENT:  UPDATE "public"."AuditLog" SET "action" = $1 WHERE ("public"."AuditLog"."id" = $2 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 15:29:15.884 WAT [46052] ERROR:  AuditLog est en ajout seul
+2026-11-11 15:29:15.884 WAT [46052] CONTEXT:  PL/pgSQL function audit_log_immutable() line 4 at RAISE
+2026-11-11 15:29:15.884 WAT [46052] STATEMENT:  DELETE FROM "public"."AuditLog" WHERE ("public"."AuditLog"."id" = $1 AND 1=1) RETURNING "public"."AuditLog"."id", "public"."AuditLog"."userId", "public"."AuditLog"."action", "public"."AuditLog"."resourceType", "public"."AuditLog"."resourceId", "public"."AuditLog"."oldValues", "public"."AuditLog"."newValues", "public"."AuditLog"."ip", "public"."AuditLog"."createdAt"
+
+2026-11-11 15:29:47.635 WAT [38344] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.636 WAT [41012] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.637 WAT [30196] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.637 WAT [36336] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.638 WAT [40352] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.638 WAT [51484] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.638 WAT [31040] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:29:47.638 WAT [36592] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.639 WAT [3712] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.639 WAT [27412] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.639 WAT [17516] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:29:47.639 WAT [20572] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:29:47.639 WAT [55840] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:29:47.639 WAT [49248] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.538 WAT [51348] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:31:04.538 WAT [30460] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.538 WAT [47500] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:31:04.538 WAT [46688] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:31:04.538 WAT [41476] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:31:04.538 WAT [54416] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.538 WAT [38060] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:31:04.539 WAT [30740] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.539 WAT [29916] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.539 WAT [17472] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:31:04.539 WAT [42152] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.539 WAT [36468] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:31:04.540 WAT [48972] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:32:49.714 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 15:32:57.169 WAT [40800] LOG:  checkpoint complete: wrote 68 buffers (0.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=7.393 s, sync=0.056 s, total=7.456 s; sync files=59, longest=0.002 s, average=0.001 s; distance=346 kB, estimate=4567 kB; lsn=0/64AFCA0, redo lsn=0/64AFC10
+
+2026-11-11 15:37:49.185 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 15:37:49.741 WAT [40800] LOG:  checkpoint complete: wrote 5 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.543 s, sync=0.007 s, total=0.557 s; sync files=6, longest=0.002 s, average=0.002 s; distance=10 kB, estimate=4111 kB; lsn=0/64B24B0, redo lsn=0/64B2458
+
+2026-11-11 15:42:49.752 WAT [40800] LOG:  checkpoint starting: time
+
+2026-11-11 15:42:49.866 WAT [40800] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.002 s, total=0.114 s; sync files=1, longest=0.002 s, average=0.002 s; distance=6 kB, estimate=3701 kB; lsn=0/64B3E60, redo lsn=0/64B3E08
+
+2026-11-11 15:48:47.753 WAT [42944] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:48:47.753 WAT [47268] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:48:47.754 WAT [47832] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:48:47.754 WAT [52980] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:48:47.754 WAT [47652] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:48:47.755 WAT [47960] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+2026-11-11 15:48:47.755 WAT [55676] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:48:47.755 WAT [10528] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+
+2026-11-11 15:48:47.756 WAT [52088] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
+	
+

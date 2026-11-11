@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.pgdata
+storage
+
+.next-e2e
+storage-test
+test-results
+playwright-report
+.next-build

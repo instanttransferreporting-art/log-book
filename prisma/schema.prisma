@@ -1,0 +1,191 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum DocumentStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+model Permission {
+  id    String           @id @default(cuid())
+  key   String           @unique // ex: documents.view
+  label String
+  roles RolePermission[]
+}
+
+model Role {
+  id          String           @id @default(cuid())
+  key         String           @unique // SUPER_ADMIN | ADMIN | MANAGER | USER | custom
+  name        String
+  description String?
+  isSystem    Boolean          @default(false)
+  permissions RolePermission[]
+  users       User[]
+  memberships CompanyMembership[]
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  isActive     Boolean  @default(true)
+  roleId       String
+  role         Role     @relation(fields: [roleId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  memberships CompanyMembership[]
+  documents   Document[]
+  auditLogs   AuditLog[]
+}
+
+model Company {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  name        String
+  description String?
+  logoUrl     String?
+  color       String   @default("#D4A017")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categories  DocumentCategory[]
+  memberships CompanyMembership[]
+  documents   Document[]
+}
+
+// Un utilisateur est rattaché à N entreprises; roleId optionnel = surcharge du rôle global pour cette entreprise.
+model CompanyMembership {
+  id        String   @id @default(cuid())
+  userId    String
+  companyId String
+  roleId    String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  role      Role?    @relation(fields: [roleId], references: [id])
+
+  @@unique([userId, companyId])
+  @@index([companyId])
+}
+
+model DocumentCategory {
+  id          String    @id @default(cuid())
+  companyId   String
+  name        String
+  slug        String
+  description String?
+  icon        String    @default("file-text")
+  /// Code court utilisé dans la référence automatique (ex. CS = Courrier sortant)
+  code        String?
+  /// Modèle de référence ; null = pas de référence automatique. Ex: N°{num}/{cat}/{issuer}/{company}/{recipient}/{entity}/{ddmm}/{yyyy}
+  referenceTemplate String?
+  /// Colonnes visibles dans la liste (clés). null = affichage par défaut.
+  listColumns Json?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  archivedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  company   Company             @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  schemas   FormSchemaVersion[]
+  documents Document[]
+
+  @@unique([companyId, slug])
+  @@index([companyId, sortOrder])
+}
+
+// Schéma de formulaire versionné. `fields` = tableau JSON de définitions de champs.
+// Une version publiée est immuable : toute modification crée une nouvelle version.
+model FormSchemaVersion {
+  id          String   @id @default(cuid())
+  categoryId  String
+  version     Int
+  fields      Json
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  category  DocumentCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  documents Document[]
+
+  @@unique([categoryId, version])
+}
+
+model Document {
+  id              String         @id @default(cuid())
+  companyId       String
+  categoryId      String
+  schemaVersionId String
+  number          Int // numéro d'enregistrement par catégorie
+  reference       String?
+  issuer          String?
+  recipient       String?
+  entity          String? // entreprise / organisme tiers concerné
+  subject         String?
+  docDate         DateTime?
+  data            Json // valeurs dynamiques des champs
+  status          DocumentStatus @default(ACTIVE)
+  createdById     String
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  deletedAt       DateTime?
+
+  company       Company            @relation(fields: [companyId], references: [id])
+  category      DocumentCategory   @relation(fields: [categoryId], references: [id])
+  schemaVersion FormSchemaVersion  @relation(fields: [schemaVersionId], references: [id])
+  createdBy     User               @relation(fields: [createdById], references: [id])
+  attachments   DocumentAttachment[]
+
+  @@unique([categoryId, number])
+  @@index([companyId, categoryId, createdAt])
+  @@index([reference])
+  @@index([docDate])
+}
+
+model DocumentAttachment {
+  id         String   @id @default(cuid())
+  documentId String
+  fileName   String
+  mimeType   String
+  size       Int
+  storageKey String
+  createdAt  DateTime @default(now())
+  document   Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@index([documentId])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  userId       String?
+  action       String // ex: document.create
+  resourceType String
+  resourceId   String?
+  oldValues    Json?
+  newValues    Json?
+  ip           String?
+  createdAt    DateTime @default(now())
+  user         User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([resourceType, resourceId])
+  @@index([createdAt])
+}

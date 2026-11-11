@@ -1,0 +1,99 @@
+   ▲ Next.js 15.5.20 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://26.166.118.202:3000
+   - Environments: .env
+   - Experiments (use with caution):
+     · serverActions
+
+ ✓ Starting...
+ ✓ Ready in 1649ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 4.1s
+ GET /login 200 in 4764ms
+ ○ Compiling /c/[code]/[slug] ...
+ ✓ Compiled /c/[code]/[slug] in 548ms
+ GET /c/IT/courrier-sortant 200 in 2083ms
+ ○ Compiling /api/export ...
+ ✓ Compiled /api/export in 1794ms
+ GET /api/export?category=cmwc6z3pt000evb4c1y29vpmy&size=25&sort=number&dir=desc&format=xlsx 200 in 2702ms
+ GET /api/export?category=cmwc6z3pt000evb4c1y29vpmy&size=25&sort=number&dir=desc&format=xlsx 200 in 465ms
+ GET /c/SGFIN/categorie1 200 in 364ms
+ ✓ Compiled /api/documents/[id] in 286ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 1742ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 1747ms
+ GET /api/export?category=cmwc6z3pt000evb4c1y29vpmy&size=25&sort=number&dir=desc&format=pdf 200 in 418ms
+ ✓ Compiled /api/categories/[id]/activity in 303ms
+ GET /api/categories/cmwc6z3pt000evb4c1y29vpmy/activity 200 in 1557ms
+ GET /api/categories/cmwc6z3pt000evb4c1y29vpmy/activity 200 in 1555ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 410ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 412ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 433ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 435ms
+ GET /login 200 in 153ms
+ POST /c/SGFIN/categorie1 303 in 348ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1054ms
+ GET / 200 in 1410ms
+ POST /login 303 in 1870ms
+ ✓ Compiled /admin in 418ms
+ GET /admin 200 in 574ms
+ ✓ Compiled /admin/roles in 364ms
+ GET /admin/roles 200 in 529ms
+ ✓ Compiled /admin/users in 411ms
+ GET /admin/users 200 in 629ms
+ GET /c/UC/decharge-materielle 200 in 204ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 468ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 479ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 441ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 444ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 406ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 409ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 430ms
+ GET /api/categories/cmwc157z1002jvbuo6cx731xa/activity 200 in 431ms
+ GET /c/SGFIN/categorie1 200 in 282ms
+ GET /api/categories/cmwc6z3pt000evb4c1y29vpmy/activity 200 in 400ms
+ GET /api/categories/cmwc6z3pt000evb4c1y29vpmy/activity 200 in 397ms
+ GET / 200 in 210ms
+ GET /admin 200 in 174ms
+ ✓ Compiled /admin/audit in 387ms
+ GET /admin/audit 200 in 570ms
+ GET /admin 200 in 145ms
+ ✓ Compiled /admin/companies in 395ms
+ GET /admin/companies 200 in 579ms
+ GET /admin/roles 200 in 191ms
+ GET /admin/audit 200 in 170ms
+ GET /admin 200 in 156ms
+ GET /c/UC/procedure 200 in 184ms
+ GET /c/SGFIN/categorie1 200 in 190ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 410ms
+ GET /api/documents/cmwc73vvu000tvb4cnihxfxuv 200 in 410ms
+ GET /api/categories/cmwc6z3pt000evb4c1y29vpmy/activity 200 in 430ms
+ GET /api/categories/cmwc6z3pt000evb4c1y29vpmy/activity 200 in 430ms
+ GET /c/FCM/document-disciplinaire 200 in 228ms
+ GET /api/categories/cmwc1583s00akvbuor8xabvm0/activity 200 in 399ms
+ GET /api/categories/cmwc1583s00akvbuor8xabvm0/activity 200 in 400ms
+ GET /admin 200 in 163ms
+ GET /admin/roles 200 in 168ms
+ GET /admin/audit 200 in 177ms
+ GET /admin/users 200 in 229ms
+
+-----
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\ivan\AppData\Local\Temp\next-panic-1a00ced82b3b5a3745ef7428949ba5c9.log.
+
+To help make Turbopack better, report this error by clicking here: https://github.com/vercel/next.js/discussions/new?category=turbopack-error-report&title=Turbopack%20Error%3A%20Next.js%20package%20not%20found&body=Turbopack%20version%3A%20%60v15.5.20%60%0ANext.js%20version%3A%20%600.0.0%60%0A%0AError%20message%3A%0A%60%60%60%0ATurbopack%20Error%3A%20Next.js%20package%20not%20found%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+-----
+
+Error [TurbopackInternalError]: Next.js package not found
+
+Debug info:
+- Execution of get_entrypoints_with_issues_operation failed
+- Execution of EntrypointsOperation::new failed
+- Execution of Project::entrypoints failed
+- Execution of AppProject::routes failed
+- Execution of directory_tree_to_entrypoints_internal failed
+- Execution of get_next_package failed
+- Next.js package not found
+    at <unknown> (TurbopackInternalError: Next.js package not found) {
+  location: undefined
+}
+[?25h
