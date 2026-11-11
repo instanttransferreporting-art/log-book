@@ -10,6 +10,8 @@
     "db:start": "tsx scripts/db.mts",
     "db:seed": "prisma db seed",
     "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "postinstall": "prisma generate",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "db:backfill": "tsx scripts/backfill-references.ts"

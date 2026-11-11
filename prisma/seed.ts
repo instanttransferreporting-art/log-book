@@ -27,6 +27,7 @@ const COMPANIES: { name: string; code: string; color: string; cats: string[] }[]
 ];
 
 async function main() {
+  console.log("Seed : rôles et permissions…");
   for (const [key, label] of Object.entries(PERMISSIONS))
     await db.permission.upsert({ where: { key }, update: { label }, create: { key, label } });
 
@@ -53,7 +54,8 @@ async function main() {
     const company = await db.company.upsert({
       where: { code: c.code }, update: {}, create: { name: c.name, code: c.code, color: c.color },
     });
-    for (const [i, name] of c.cats.entries()) {
+    // En parallèle : la base distante a de la latence, du séquentiel prendrait plusieurs minutes
+    await Promise.all(c.cats.map(async (name, i) => {
       const cat = await db.documentCategory.upsert({
         where: { companyId_slug: { companyId: company.id, slug: slug(name) } }, update: {},
         create: { companyId: company.id, name, slug: slug(name), sortOrder: i, code: categoryCodeFromName(name), referenceTemplate: DEFAULT_REFERENCE_TEMPLATE },
@@ -62,8 +64,9 @@ async function main() {
         where: { categoryId_version: { categoryId: cat.id, version: 1 } }, update: {},
         create: { categoryId: cat.id, version: 1, fields: DEFAULT_FIELDS, isPublished: true },
       });
-    }
+    }));
+    console.log(`  ✓ ${c.name} (${c.cats.length} catégories)`);
   }
   console.log(`Seed OK — admin: ${email} / ${password}`);
 }
-main().finally(() => db.$disconnect());
+main().catch((e) => { console.error(e); process.exitCode = 1; }).finally(() => db.$disconnect());
