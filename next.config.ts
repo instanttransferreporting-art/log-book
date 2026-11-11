@@ -8,6 +8,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  devIndicators: false, // masque la pastille Next.js en bas de l'écran
   distDir: process.env.NEXT_DIST_DIR ?? ".next", // dossier séparé pour les tests E2E
   experimental: { serverActions: { bodySizeLimit: "12mb" } },
   async headers() {

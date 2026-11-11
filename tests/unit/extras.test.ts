@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { clearAllFailures, isLocked, recordFailure, resetFailures } from "@/lib/auth/rate-limit";
 import { can, type CurrentUser } from "@/lib/auth/access";
 import { resolvePeriod } from "@/lib/services/stats";
@@ -7,7 +7,13 @@ import { checkLogo } from "@/lib/services/storage";
 import { parseFormData } from "@/lib/forms/validate";
 
 describe("limitation des tentatives de connexion", () => {
-  beforeEach(clearAllFailures);
+  beforeEach(() => { process.env.LOGIN_MAX_ATTEMPTS = "5"; clearAllFailures(); });
+  afterEach(() => { delete process.env.LOGIN_MAX_ATTEMPTS; });
+  it("est désactivée par défaut : aucun blocage, même après de nombreux échecs", () => {
+    delete process.env.LOGIN_MAX_ATTEMPTS;
+    for (let i = 0; i < 50; i++) recordFailure("c@x.io", "ip");
+    expect(isLocked("c@x.io", "ip")).toBe(false);
+  });
   it("verrouille après 5 échecs puis libère après la fenêtre", () => {
     const t0 = 1_000_000;
     for (let i = 0; i < 4; i++) recordFailure("a@x.io", "1.1.1.1", t0);

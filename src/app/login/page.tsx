@@ -7,6 +7,7 @@ import { isLocked } from "@/lib/auth/rate-limit";
 import { getLocale, getT } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleSwitch } from "@/components/locale-switch";
+import { SubmitButton } from "@/components/submit-button";
 
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
   if ((await auth())?.user) redirect("/");
@@ -41,7 +42,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           <input id="email" name="email" type="email" required autoComplete="username" className="input" /></div>
         <div className="space-y-1"><label htmlFor="password" className="text-sm font-medium">{t("login.password")}</label>
           <input id="password" name="password" type="password" required autoComplete="current-password" className="input" /></div>
-        <button className="btn w-full">{t("login.submit")}</button>
+        <SubmitButton className="btn w-full">{t("login.submit")}</SubmitButton>
       </form>
     </main>
   );

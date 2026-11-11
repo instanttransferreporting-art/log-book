@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { getLocale } from "@/lib/i18n";
+import { NavProgress } from "@/components/nav-progress";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = { title: "Log Book", description: "Gestion documentaire multi-entreprises", icons: { icon: "/favicon-128.png", apple: "/apple-icon.png" } };
@@ -14,7 +15,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={locale} className={inter.variable} suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased"><NavProgress />{children}</body>
     </html>
   );
 }
