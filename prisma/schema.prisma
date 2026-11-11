@@ -4,7 +4,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url       = env("DATABASE_URL") // exécution : pooler "Transaction" (port 6543) avec ?pgbouncer=true
+  directUrl = env("DIRECT_URL")   // migrations/seed : connexion directe ou pooler "Session" (port 5432)
 }
 
 enum DocumentStatus {

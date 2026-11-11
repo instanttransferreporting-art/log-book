@@ -8,7 +8,7 @@ export default async function setup() {
   const exists = await admin.$queryRaw<unknown[]>`SELECT 1 FROM pg_database WHERE datname = 'logbook_test'`;
   if (exists.length === 0) await admin.$executeRawUnsafe("CREATE DATABASE logbook_test");
   await admin.$disconnect();
-  const env = { ...process.env, DATABASE_URL: TEST_URL };
+  const env = { ...process.env, DATABASE_URL: TEST_URL, DIRECT_URL: TEST_URL };
   execSync("npx prisma migrate deploy", { env, stdio: "ignore" });
   execSync("npx prisma db seed", { env, stdio: "ignore" }); // rôles, permissions (idempotent)
 }
